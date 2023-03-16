@@ -35,3 +35,5 @@ fs.createReadStream("../data/kepler_data.csv")
     );
     console.log(`${habitablePlanets.length} habitable planets found!`);
   });
+
+export { habitablePlanets };
