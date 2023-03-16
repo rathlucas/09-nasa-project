@@ -1,6 +1,7 @@
 import { parse } from "csv-parse";
 import fs from "fs";
 import path from "path";
+import { getDirname } from "../helpers/utils.js";
 
 const habitablePlanets = [];
 
@@ -15,7 +16,16 @@ function isHabitablePlanet(planet) {
 
 function loadPlanetsData() {
   return new Promise((resolve, reject) => {
-    fs.createReadStream(path.join("src", "data", "kepler_data.csv"))
+    fs.createReadStream(
+      path.join(
+        getDirname(import.meta.url),
+        "..",
+        "..",
+        "src",
+        "data",
+        "kepler_data.csv"
+      )
+    )
       .pipe(
         parse({
           comment: "#",
