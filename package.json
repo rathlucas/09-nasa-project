@@ -1,0 +1,26 @@
+{
+  "name": "09-nasa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm i --prefix server",
+    "install-client": "npm i --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix client",
+    "dev": "npm run server & npm run client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rathlucas/09-nasa-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rathlucas/09-nasa-project/issues"
+  },
+  "homepage": "https://github.com/rathlucas/09-nasa-project#readme"
+}
