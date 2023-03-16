@@ -1,4 +1,4 @@
-import { planets } from "../models/planets-model.js";
+import { habitablePlanets as planets } from "../models/planets-model.js";
 
 export class PlanetsController {
   static getPlanets(req, res) {
