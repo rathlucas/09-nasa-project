@@ -4,7 +4,7 @@ import * as dotenv from "dotenv";
 
 import { app } from "./app.js";
 import { loadPlanetsData } from "./models/planets-model.js";
-import { UndefinedException } from "./errors/undefined-env-error.js";
+import { UndefinedException } from "./errors/undefined-exception.js";
 
 dotenv.config({});
 
