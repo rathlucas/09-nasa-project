@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import { planetsRouter } from "./routes/planets-route.js";
+import { launchesRouter } from "./routes/launches-route.js";
 import { getDirname } from "./helpers/utils.js";
 
 export const app = express();
@@ -19,6 +20,7 @@ app.use(json());
 app.use(express.static(path.join(getDirname(import.meta.url), "..", "public")));
 
 app.use("/planets", planetsRouter);
+app.use("/launches", launchesRouter);
 app.get("/", (req, res) => {
   res.sendFile(
     path.join(getDirname(import.meta.url), "..", "public", "index.html")
