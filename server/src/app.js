@@ -21,7 +21,7 @@ app.use(express.static(path.join(getDirname(import.meta.url), "..", "public")));
 
 app.use("/planets", planetsRouter);
 app.use("/launches", launchesRouter);
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(
     path.join(getDirname(import.meta.url), "..", "public", "index.html")
   );
