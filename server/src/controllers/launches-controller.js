@@ -1,4 +1,8 @@
-import { getLaunches, addLaunch } from "../models/launches-model.js";
+import {
+  getLaunches,
+  addLaunch,
+  existsLaunchWithId,
+} from "../models/launches-model.js";
 
 export class LaunchesController {
   static async httpGetLaunches(req, res) {
@@ -26,5 +30,17 @@ export class LaunchesController {
 
     addLaunch(launch);
     return res.status(201).json(launch);
+  }
+
+  static async httpAbortLaunch(req, res) {
+    const launchId = req.params.id;
+
+    if (!existsLaunchWithId(launchId)) {
+      return res.status(404).json({
+        error: "Launch not found",
+      });
+    }
+
+    return res.status(200).json(aborted);
   }
 }
