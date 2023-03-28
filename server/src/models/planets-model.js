@@ -48,4 +48,8 @@ function loadPlanetsData() {
   });
 }
 
-export { loadPlanetsData, habitablePlanets };
+function getPlanets() {
+  return habitablePlanets;
+}
+
+export { loadPlanetsData, getPlanets };
