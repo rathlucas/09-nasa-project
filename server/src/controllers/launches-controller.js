@@ -12,7 +12,7 @@ export class LaunchesController {
       !launch.mission ||
       !launch.rocket ||
       !launch.launchDate ||
-      !launch.destination
+      !launch.target
     ) {
       return res
         .status(400)
