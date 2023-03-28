@@ -3,6 +3,6 @@ import { LaunchesController } from "../controllers/launches-controller.js";
 
 const launchesRouter = express.Router();
 
-launchesRouter.get("/", LaunchesController.getLaunches);
+launchesRouter.get("/", LaunchesController.httpGetLaunches);
 
 export { launchesRouter };

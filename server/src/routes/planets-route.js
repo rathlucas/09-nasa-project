@@ -4,4 +4,4 @@ import { PlanetsController } from "../controllers/planets-controller.js";
 
 export const planetsRouter = Router();
 
-planetsRouter.get("/", PlanetsController.getPlanets);
+planetsRouter.get("/", PlanetsController.httpGetPlanets);
