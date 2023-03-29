@@ -2,6 +2,7 @@ import {
   getLaunches,
   addLaunch,
   existsLaunchWithId,
+  abortLaunchById,
 } from "../models/launches-model.js";
 
 export class LaunchesController {
@@ -33,7 +34,7 @@ export class LaunchesController {
   }
 
   static async httpAbortLaunch(req, res) {
-    const launchId = req.params.id;
+    const launchId = Number(req.params.id);
 
     if (!existsLaunchWithId(launchId)) {
       return res.status(404).json({
@@ -41,6 +42,7 @@ export class LaunchesController {
       });
     }
 
+    const aborted = abortLaunchById(launchId);
     return res.status(200).json(aborted);
   }
 }
