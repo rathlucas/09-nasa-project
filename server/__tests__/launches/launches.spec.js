@@ -1,7 +1,9 @@
+import request from "supertest";
+import { app } from "../../src/app";
+
 describe("Test GET /launches", () => {
-  it("Should respond with 200 success", () => {
-    const response = 200;
-    expect(response).toBe(200);
+  it("Should respond with 200 success", async () => {
+    await request(app).get("/launches").expect(200);
   });
 });
 
