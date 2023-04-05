@@ -1,6 +1,7 @@
 import { parse } from "csv-parse";
 import fs from "fs";
 import path from "path";
+import planets from "./planets-mongo.js";
 import { getDirname } from "../../helpers/utils.js";
 
 const habitablePlanets = [];
