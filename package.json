@@ -23,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/rathlucas/09-nasa-project/issues"
   },
-  "homepage": "https://github.com/rathlucas/09-nasa-project#readme",
-  "dependencies": {
-    "mongoose": "^7.0.3"
-  }
+  "homepage": "https://github.com/rathlucas/09-nasa-project#readme"
 }
