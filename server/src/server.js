@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 
 import { app } from "./app.js";
-import { loadPlanetsData } from "./models/planets-model.js";
+import { loadPlanetsData } from "./models/planets/planets-model.js";
 import { UndefinedException } from "./errors/undefined-exception.js";
 
 dotenv.config({});
