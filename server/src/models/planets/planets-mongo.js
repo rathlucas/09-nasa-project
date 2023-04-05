@@ -7,4 +7,4 @@ const planetsSchema = mongoose.Schema({
   },
 });
 
-export default mongoose.Schema("Planet", planetsSchema);
+export default mongoose.model("Planet", planetsSchema);
