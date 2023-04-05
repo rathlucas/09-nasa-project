@@ -1,4 +1,4 @@
-import { getPlanets } from "../models/planets-model.js";
+import { getPlanets } from "../models/planets/planets-model.js";
 
 export class PlanetsController {
   static httpGetPlanets(req, res) {
