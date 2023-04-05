@@ -33,3 +33,5 @@ const launchesSchema = new mongoose.Schema({
   },
   customers: [String],
 });
+
+export { launchesSchema };
