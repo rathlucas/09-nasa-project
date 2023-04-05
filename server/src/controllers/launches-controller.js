@@ -3,7 +3,7 @@ import {
   addLaunch,
   existsLaunchWithId,
   abortLaunchById,
-} from "../models/launches-model.js";
+} from "../models/launches/launches-model.js";
 
 export class LaunchesController {
   static async httpGetLaunches(req, res) {
