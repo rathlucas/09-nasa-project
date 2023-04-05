@@ -13,9 +13,9 @@ const PORT = process.env.PORT ?? 8080;
 
 const MONGO_URL = `mongodb+srv://lucas:${process.env.MONGO_PASSWORD}@cluster0.chbipbt.mongodb.net/nasa?retryWrites=true&w=majority`;
 
-if (typeof process.env["MONGO_URL"] == "undefined") {
+if (typeof process.env["MONGO_PASSWORD"] == "undefined") {
   throw new UndefinedException(
-    "MONGO_URL variable is undefined. Create a .env file inside the server folder and add it accordingly."
+    "MONGO_PASSWORD variable is undefined. Create a .env file inside the server folder and add it accordingly."
   );
 }
 
