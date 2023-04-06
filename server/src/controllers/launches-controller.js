@@ -7,7 +7,7 @@ import {
 
 export class LaunchesController {
   static async httpGetLaunches(req, res) {
-    return res.status(200).json(getLaunches());
+    return res.status(200).json(await getLaunches());
   }
 
   static async httpAddLaunch(req, res) {
