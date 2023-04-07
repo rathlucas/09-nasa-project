@@ -1,6 +1,6 @@
 import {
   getLaunches,
-  addLaunch,
+  scheduleNewLaunch,
   existsLaunchWithId,
   abortLaunchById,
 } from "../models/launches/launches-model.js";
@@ -29,7 +29,7 @@ export class LaunchesController {
       return res.status(400).json({ error: "Invalid launch date" });
     }
 
-    addLaunch(launch);
+    await scheduleNewLaunch(launch);
     return res.status(201).json(launch);
   }
 
