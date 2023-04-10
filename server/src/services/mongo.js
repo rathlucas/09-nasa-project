@@ -17,4 +17,8 @@ async function mongoConnect() {
   await mongoose.connect(MONGO_URL);
 }
 
-export { mongoConnect };
+async function mongoDisconnect() {
+  await mongoose.disconnect();
+}
+
+export { mongoConnect, mongoDisconnect };
