@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 const MONGO_URL = `mongodb+srv://lucas:${process.env.MONGO_PASSWORD}@cluster0.chbipbt.mongodb.net/nasa?retryWrites=true&w=majority`;
 
