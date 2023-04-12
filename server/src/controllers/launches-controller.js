@@ -5,9 +5,13 @@ import {
   abortLaunchById,
 } from "../models/launches/launches-model.js";
 
+import { getPagination } from "../services/query.js";
+
 export class LaunchesController {
   static async httpGetLaunches(req, res) {
-    return res.status(200).json(await getLaunches());
+    const { skip, limit } = getPagination(req.query);
+    const launches = await getLaunches(skip, limit);
+    return res.status(200).json(launches);
   }
 
   static async httpAddLaunch(req, res) {
