@@ -69,8 +69,8 @@ async function existsLaunchWithId(launchId) {
   return await findLaunch({ flightNumber: launchId });
 }
 
-async function getLaunches() {
-  return await launches.find({}, { _id: 0, __v: 0 });
+async function getLaunches(skip, limit) {
+  return await launches.find({}, { _id: 0, __v: 0 }).skip(skip).limit(limit);
 }
 
 async function getLatestFlightNumber() {
