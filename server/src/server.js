@@ -3,8 +3,10 @@ import http from "http";
 import * as dotenv from "dotenv";
 
 import { app } from "./app.js";
+
 import { mongoConnect } from "./services/mongo.js";
 import { loadPlanetsData } from "./models/planets/planets-model.js";
+import { loadLaunchesData } from "./models/launches/launches-model.js";
 import { UndefinedException } from "./errors/undefined-exception.js";
 
 dotenv.config({});
@@ -29,6 +31,7 @@ const server = protocol.createServer(app);
 (async () => {
   await mongoConnect();
   await loadPlanetsData();
+  await loadLaunchesData();
 
   server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
