@@ -5,17 +5,6 @@ import { httpLoadLaunchesData } from "../../http/launches/requests.js";
 
 const DEFAULT_FLIGHT_NUMBER = 100;
 
-const launch = {
-  flightNumber: 100,
-  mission: "Kepler Exploration X",
-  rocket: "Explorer IS1",
-  launchDate: new Date("december 27, 2030"),
-  target: "Kepler-442 b",
-  customers: ["ZTM", "NASA"],
-  upcoming: true,
-  success: true,
-};
-
 async function populateLaunches() {
   console.log("Downloading launches data...");
   const response = await httpLoadLaunchesData();
@@ -70,7 +59,11 @@ async function existsLaunchWithId(launchId) {
 }
 
 async function getLaunches(skip, limit) {
-  return await launches.find({}, { _id: 0, __v: 0 }).skip(skip).limit(limit);
+  return await launches
+    .find({}, { _id: 0, __v: 0 })
+    .sort({ flightNumber: 1 })
+    .skip(skip)
+    .limit(limit);
 }
 
 async function getLatestFlightNumber() {
