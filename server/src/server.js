@@ -13,9 +13,9 @@ dotenv.config({});
 
 const PORT = process.env.PORT ?? 8080;
 
-if (typeof process.env["MONGO_PASSWORD"] == "undefined") {
+if (typeof process.env["MONGO_URL"] == "undefined") {
   throw new UndefinedException(
-    "MONGO_PASSWORD variable is undefined. Create a .env file inside the server folder and add it accordingly."
+    "MONGO_URL variable is undefined. Create a .env file inside the server folder and add it accordingly."
   );
 }
 
